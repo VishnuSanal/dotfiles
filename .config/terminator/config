@@ -1,0 +1,25 @@
+[global_config]
+  dbus = False
+  geometry_hinting = True
+[keybindings]
+[profiles]
+  [[default]]
+    icon_bell = False
+    background_darkness = 0.6
+    background_type = transparent
+    cursor_shape = ibeam
+    cursor_color = "#AAAAAA"
+    font = Cantarell 11
+    foreground_color = "#FFFFFF"
+    show_titlebar = False
+    scrollbar_position = hidden
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+[plugins]
