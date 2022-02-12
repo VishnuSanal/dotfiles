@@ -21,6 +21,9 @@ alias bsconf='cd ~/.config/bspwm && cp bspwmrc backup && vim bspwmrc'
 alias sxconf='cd ~/.config/sxhkd && cp sxhkdrc backup && vim sxhkdrc'
 alias polyconf='cd ~/.config/polybar && cp config backup && vim config'
 alias terconf='cd ~/.config/terminator && cp config backup && vim config'
+alias hidebar='cd ~/.config/bspwm && cp hide bspwmrc && killall -q polybar && bspc quit'
+alias showbar='cd ~/.config/bspwm && cp show bspwmrc && bspc wm -r'
+
 
 # cd + ls
 cd() {

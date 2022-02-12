@@ -1,0 +1,27 @@
+#! /bin/sh
+
+# init
+pgrep -x sxhkd > /dev/null || sxhkd &
+# $HOME/.config/polybar/launch.sh
+picom &
+feh --bg-scale ~/Pictures/wallpaper2.jpg
+# MPD daemon start (if no other user instance exists)
+[ ! -s ~/.config/mpd/pid ] && mpd && mpc pause &
+
+bspc monitor -d I II III IV V
+
+bspc config border_width        0
+bspc config window_gap          2
+
+bspc config split_ratio          0.5
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+# override-redirect = true
+# enable-ipc = true
+
+# bspc rule -a telegram-desktop state=floating
+# bspc rule -a Gimp state=floating follow=on
+# bspc rule -a mplayer2 state=floating
+# bspc rule -a Kupfer.py focus=on
+# bspc rule -a Screenkey manage=off
