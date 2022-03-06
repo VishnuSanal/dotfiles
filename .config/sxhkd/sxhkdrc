@@ -15,12 +15,12 @@ ctrl + alt + m
 	firefox
 
 # brave
-ctrl + alt + b
+super + x
 	brave
 
 # nautilus
-ctrl + alt + n
-	nautilus
+super + e
+	pcmanfm
 
 # telegram
 ctrl + alt + t

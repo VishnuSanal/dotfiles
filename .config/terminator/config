@@ -10,7 +10,7 @@
     cursor_shape = ibeam
     cursor_color = "#AAAAAA"
     font = Cantarell 11
-    foreground_color = "#FFFFFF"
+    foreground_color = "#ffffff"
     show_titlebar = False
     scrollbar_position = hidden
 [layouts]
