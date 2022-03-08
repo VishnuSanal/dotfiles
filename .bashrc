@@ -2,6 +2,8 @@
 # ~/.bashrc
 #
 
+export PATH="$HOME/bin:$PATH"
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -25,6 +27,7 @@ alias hidebar='cp ~/.config/bspwm/hide ~/.config/bspwm/bspwmrc && killall -q pol
 alias showbar='cp ~/.config/bspwm/show ~/.config/bspwm/bspwmrc && bspc wm -r'
 
 alias gs='git status'
+alias cred='echo $(cat ~/temp/temp) | xclip -selection primary'
 
 # cd + ls
 cd() {
