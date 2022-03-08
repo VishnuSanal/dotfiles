@@ -24,8 +24,7 @@ alias terconf='cp ~/.config/terminator/config ~/.config/terminator/backup && vim
 alias hidebar='cp ~/.config/bspwm/hide ~/.config/bspwm/bspwmrc && killall -q polybar && bspc quit'
 alias showbar='cp ~/.config/bspwm/show ~/.config/bspwm/bspwmrc && bspc wm -r'
 
-alias vi='vim'
-
+alias gs='git status'
 
 # cd + ls
 cd() {
