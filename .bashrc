@@ -26,8 +26,11 @@ alias terconf='cp ~/.config/terminator/config ~/.config/terminator/backup && vim
 alias hidebar='cp ~/.config/bspwm/hide ~/.config/bspwm/bspwmrc && killall -q polybar && bspc quit'
 alias showbar='cp ~/.config/bspwm/show ~/.config/bspwm/bspwmrc && bspc wm -r'
 
-alias gs='git status'
 alias cred='echo $(cat ~/temp/temp) | xclip -selection primary'
+
+alias gs='git status'
+alias ga='git add --all'
+alias gp='cred && git push'
 
 # cd + ls
 cd() {
