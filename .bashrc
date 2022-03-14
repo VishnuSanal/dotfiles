@@ -29,6 +29,7 @@ alias showbar='cp ~/.config/bspwm/show ~/.config/bspwm/bspwmrc && bspc wm -r'
 alias cred='echo $(cat ~/temp/temp) | xclip -selection primary'
 
 alias gl='git log'
+alias gd='git diff'
 alias gs='git status'
 alias ga='git add --all'
 alias gc='git commit -m' $@
