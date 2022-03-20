@@ -10,10 +10,6 @@ super + Return
 super + @space
 	dmenu_run
 
-# firefox
-ctrl + alt + m
-	firefox
-
 # brave
 super + x
 	brave
