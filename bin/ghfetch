@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#Checking Dependencies
+for apps in curl jq; do
+	[ ! "$(which "$apps")" ] && echo "Please install $apps!" && exit 1
+done
+
+USER=$1
+
+if [ ! "$USER" ]; then
+	echo "Username empty" && exit 1
+fi
+
+#Fetch!
+FETCH=$(curl https://api.github.com/users/$USER/events/public)
+
+KEYS=($(printf "%s\n" "$(jq -r '.[] | .type' <<< $FETCH)" | sort -u | tr '\n' ' '))
+
+for key in "${KEYS[@]}"; do
+	echo -e "\n$key:\n"
+	jq '[.[] | select( .type == '"\""$key"\""' ) | { repo: .repo.name, when: .created_at }]' <<< $FETCH
+done
