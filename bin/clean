@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo -e '\nCleaning packages:\n'
+sudo pacman -Rns $(pacman -Qtdq)
+echo -e '\nDone\n'
+
+echo -e '\nCleaning cache directory:\n'
+rm -rf ~/.cache
+echo -e '\nDone\n'
+
+echo -e '\nCleaning  package cache:\n'
+sudo pacman -Scc
+echo -e '\nDone\n'
