@@ -21,7 +21,7 @@ alias shut='shutdown now'
 
 alias bsconf='cp ~/.config/bspwm/bspwmrc ~/.config/bspwm/backup && vim ~/.config/bspwm/bspwmrc'
 alias sxconf='cp ~/.config/sxhkd/sxhkdrc ~/.config/sxhkd/backup && vim ~/.config/sxhkd/sxhkdrc'
-alias polyconf='cp ~/.config/polybar/config ~/.config/polybar/backup && vim ~/.config/polybar/config'
+# alias polyconf='cp ~/.config/polybar/config.ini ~/.config/polybar/backup.ini && vim ~/.config/polybar/config.ini'
 alias terconf='cp ~/.config/terminator/config ~/.config/terminator/backup && vim ~/.config/terminator/config'
 alias hidebar='cp ~/.config/bspwm/hide ~/.config/bspwm/bspwmrc && killall -q polybar && bspc quit'
 alias showbar='cp ~/.config/bspwm/show ~/.config/bspwm/bspwmrc && bspc wm -r'

@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + @space
-	dmenu_run
+	dmenu_run -p "You're Awesome :)"
 
 # brave
 super + x
@@ -19,7 +19,7 @@ super + e
 	pcmanfm
 
 # telegram
-ctrl + alt + t
+super + c
 	telegram-desktop
 
 # flameshot
