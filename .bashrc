@@ -18,6 +18,8 @@ alias c='clear'
 alias clear='clear && echo -e "You'\''re Awesome :)\n"'
 
 alias shut='shutdown now'
+alias sx='startx'
+alias vol='pamixer --get-volume'
 
 alias bsconf='cp ~/.config/bspwm/bspwmrc ~/.config/bspwm/backup && vim ~/.config/bspwm/bspwmrc'
 alias sxconf='cp ~/.config/sxhkd/sxhkdrc ~/.config/sxhkd/backup && vim ~/.config/sxhkd/sxhkdrc'
@@ -30,6 +32,7 @@ alias cred='echo $(cat ~/temp/temp) | xclip -selection primary'
 
 alias gl='git log'
 alias gd='git diff'
+alias gds='git diff --staged'
 alias gs='git status'
 alias ga='git add --all'
 alias gc='git commit -m' $@
