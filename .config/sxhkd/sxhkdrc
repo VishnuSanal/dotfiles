@@ -22,6 +22,14 @@ super + e
 super + c
 	telegram-desktop
 
+# clipmenu
+super + v
+	clipmenu
+
+# discord
+super + s
+	discord
+
 # flameshot
 Print
 	flameshot gui
