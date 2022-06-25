@@ -43,3 +43,9 @@ cd() {
    builtin cd $@
    ls
 }
+
+alias update='sudo pacman -Syu && yay -a -Syu'
+
+alias wifil='nmcli device wifi list'
+alias wific='nmcli device wifi connect $@'
+alias wifica='nmcli --ask device wifi connect $@'
