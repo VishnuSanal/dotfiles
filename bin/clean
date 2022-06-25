@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo -e '\nRedundant packages are:\n'
+pacman -Qtdq
+echo -e '\nRemoving...\n'
+
 echo -e '\nCleaning packages:\n'
 sudo pacman -Rns $(pacman -Qtdq)
 echo -e '\nDone\n'
