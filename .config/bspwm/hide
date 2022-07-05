@@ -3,13 +3,11 @@
 # init
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-# xrandr --output eDP1 --off 
-# xrandr --output HDMI1 --mode 1280x720
-xrandr --output HDMI1 --right-of eDP1
+~/.screenlayout/layout.sh
 
 # $HOME/.config/polybar/launch.sh
 picom &
-feh --bg-center ~/Pictures/wallpaper4.png
+feh --bg-fill ~/Pictures/wallpaper4.png
 # MPD daemon start (if no other user instance exists)
 [ ! -s ~/.config/mpd/pid ] && mpd && mpc pause &
 
