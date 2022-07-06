@@ -27,7 +27,7 @@ super + v
 	clipmenu
 
 # discord
-super + s
+super + a
 	discord
 
 # flameshot
@@ -96,7 +96,7 @@ super + bracket{left,right}
 
 # cycle through workspaces
 super + grave
-	bspc desktop -f next.occupied.local
+	bspc desktop -f next.occupied
 
 # focus the last desktop
 super + Tab
