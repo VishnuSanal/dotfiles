@@ -1,0 +1,78 @@
+#          _                 _ _   _
+#     __ _| | __ _  ___ _ __(_) |_| |_ _   _
+#   / _` | |/ _` |/ __| '__| | __| __| | | |
+#  | (_| | | (_| | (__| |  | | |_| |_| |_| |
+#  \__,_|_|\__,_|\___|_|  |_|\__|\__|\__, |
+#                                    |___/
+
+# Configuration for Alacritty, the GPU enhanced terminal emulator
+
+window:
+  dimensions:
+    columns: 100
+    lines: 85
+  padding:
+    x: 10
+    y: 10
+  dynamic_padding: true
+  startup_mode: Windowed
+  opacity: 0.6
+
+font:
+  normal:
+    family: Jetbrains Mono
+    style: Medium
+  bold:
+    family: Jetbrains Mono
+    style: Bold
+  italic:
+    family: Jetbrains Mono
+    style: "Light Italic"
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+  size: 12.0
+
+colors:
+  primary:
+    background: "0x000000"
+    foreground: "0xFFFFFF"
+  cursor:
+    text: "0xFFFFFF"
+    cursor: "0xFFFFFF"
+  normal:
+    black: "0x6E6C7E"
+    red: "0xF28FAD"
+    green: "0xABE9B3"
+    yellow: "0xFAE3B0"
+    blue: "0x96CDFB"
+    magenta: "0xF5C2E7"
+    cyan: "0x89DCEB"
+    white: "0xD9E0EE"
+  bright:
+    black: "0x988BA2"
+    red: "0xF28FAD"
+    green: "0xABE9B3"
+    yellow: "0xFAE3B0"
+    blue: "0x96CDFB"
+    magenta: "0xF5C2E7"
+    cyan: "0x89DCEB"
+    white: "0xD9E0EE"
+  indexed_colors:
+    - { index: 16, color: "0xF8BD96" }
+    - { index: 17, color: "0xF5E0DC" }
+
+cursor:
+  style: Beam
+  unfocused_hollow: false
+
+scrolling:
+  history: 38
+  multiplier: 3
+
+live_config_reload: true
+custom_cursor_colors: true
+draw_bold_text_with_bright_colors: true
