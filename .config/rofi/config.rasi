@@ -1,0 +1,13 @@
+configuration{
+    modi: "drun";
+    icon-theme: "Sweet-Rainbow";
+    show-icons: true;
+    terminal: "alacritty";
+    disable-history: false;
+
+    drun {
+    	    display-name: "You're Awesome :)";
+    }
+}
+
+@theme "themes/frappe"
