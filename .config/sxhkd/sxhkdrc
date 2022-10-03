@@ -8,7 +8,8 @@ super + Return
 
 # program launcher
 super + @space
-	dmenu_run -p "You're Awesome :)"
+	rofi -show
+#	dmenu_run -p "You're Awesome :)"
 
 # brave
 super + x
