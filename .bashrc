@@ -21,14 +21,13 @@ alias shut='shutdown now'
 alias sx='startx'
 alias vol='pamixer --get-volume'
 
-alias bsconf='cp ~/.config/bspwm/bspwmrc ~/.config/bspwm/backup && vim ~/.config/bspwm/bspwmrc'
-alias sxconf='cp ~/.config/sxhkd/sxhkdrc ~/.config/sxhkd/backup && vim ~/.config/sxhkd/sxhkdrc'
-# alias polyconf='cp ~/.config/polybar/config.ini ~/.config/polybar/backup.ini && vim ~/.config/polybar/config.ini'
-alias terconf='cp ~/.config/terminator/config ~/.config/terminator/backup && vim ~/.config/terminator/config'
+alias bsdir='cd ~/.config/bspwm/'
+alias sxdir='cd ~/.config/sxhkd/'
+
 alias hidebar='cp ~/.config/bspwm/hide ~/.config/bspwm/bspwmrc && killall -q polybar && bspc quit'
 alias showbar='cp ~/.config/bspwm/show ~/.config/bspwm/bspwmrc && bspc wm -r'
 
-alias cred='echo $(cat ~/temp/temp) | xclip -selection primary'
+alias cred='echo $(cat ~/Miscellaneous/key) | xclip -selection primary'
 
 alias gl='git log'
 alias gd='git diff'
@@ -49,3 +48,6 @@ alias update='sudo pacman -Syu && yay -a -Syu'
 alias wifil='nmcli device wifi list'
 alias wific='nmcli device wifi connect $@'
 alias wifica='nmcli --ask device wifi connect $@'
+
+alias pingdns='ping -c 4 1.1.1.1'
+alias pingext='ping -c 4 archlinux.org'
