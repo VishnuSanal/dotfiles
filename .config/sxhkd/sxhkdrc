@@ -166,7 +166,7 @@ XF86AudioPrev
 XF86AudioNext
 	mpc next
 XF86MonBrightnessUp
-	xbacklight -inc 10
+	backlight -inc 10
 XF86MonBrightnessDown
-	xbacklight -dec 10
+	backlight -dec 10
 	

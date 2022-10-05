@@ -1,0 +1,32 @@
+#!/bin/bash
+
+MIN=0
+MAX=96000
+
+FILE="/sys/class/backlight/intel_backlight/brightness"
+
+CURRENT=$(cat "$FILE")
+
+if [ ! "$1" ] || [ ! "$2" ]; then
+    echo "Brightness: " $CURRENT
+    exit
+fi
+
+NEW="$CURRENT"
+
+DELTA=$(( $2 * 960 ))
+
+if [ $1 == '-inc' ]; then
+    NEW=$(( $CURRENT + $DELTA ))
+elif [ $1 == '-dec' ]; then
+    NEW=$(( $CURRENT - $DELTA ))
+fi
+
+if [ $NEW -gt $MAX ]; then
+    NEW=$MAX
+elif [ $NEW -lt $MIN ]; then
+    NEW=$MIN
+fi
+
+echo $NEW > "$FILE"
+
