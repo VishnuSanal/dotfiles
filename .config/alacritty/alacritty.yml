@@ -20,13 +20,13 @@ window:
 
 font:
   normal:
-    family: Jetbrains Mono
+    family: JetBrainsMonoNL Nerd Font Mono
     style: Medium
   bold:
-    family: Jetbrains Mono
+    family: JetBrainsMonoNL Nerd Font Mono
     style: Bold
   italic:
-    family: Jetbrains Mono
+    family: JetBrainsMonoNL Nerd Font Mono
     style: "Light Italic"
   offset:
     x: 0
@@ -34,8 +34,8 @@ font:
   glyph_offset:
     x: 0
     y: 0
-  size: 12.0
-  use_thin_strokes: true
+  size: 10.0
+  #  use_thin_strokes: true
 
 # Catppuccin!
 colors:
@@ -77,10 +77,6 @@ colors:
 cursor:
   style: Beam
   unfocused_hollow: false
-
-scrolling:
-  history: 38
-  multiplier: 3
 
 live_config_reload: true
 custom_cursor_colors: true

@@ -35,6 +35,9 @@ super + a
 Print
 	flameshot gui
 
+super + shift + p
+	pavucontrol
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
@@ -162,3 +165,8 @@ XF86AudioPrev
 	mpc prev
 XF86AudioNext
 	mpc next
+XF86MonBrightnessUp
+	xbacklight -inc 10
+XF86MonBrightnessDown
+	xbacklight -dec 10
+	

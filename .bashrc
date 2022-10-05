@@ -51,3 +51,6 @@ alias wifica='nmcli --ask device wifi connect $@'
 
 alias pingdns='ping -c 4 1.1.1.1'
 alias pingext='ping -c 4 archlinux.org'
+
+alias hs='history | grep $@'
+alias brave='LIBGL_ALWAYS_SOFTWARE=1 brave'

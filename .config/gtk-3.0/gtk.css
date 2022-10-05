@@ -2,5 +2,9 @@ VteTerminal,
 TerminalScreen,
 vte-terminal {
     padding: 26px 26px 26px 26px;
+<<<<<<< HEAD
     -VteTerminal-inner-border: 26px 26px 26px 26px;
+=======
+    -VteTerminal-inner-border: 10px 10px 10px 10px;
+>>>>>>> 6b9ed60 (update dotfiles)
 }
