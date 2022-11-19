@@ -1,0 +1,58 @@
+#!/bin/bash
+
+if [ $# == 0 ]; then
+    echo '0 -> hide internal'
+    echo '1 -> show internal'
+    echo '2 -> hide monitor'
+    echo '3 -> show monitor'
+    echo '4 -> hide both'
+    echo '5 -> show both'
+
+    read -p 'Mode: ' mode
+else
+    mode=$1
+fi
+
+case $mode in
+
+0)
+    cp ~/.screenlayout/both.sh ~/.screenlayout/layout.sh
+    cp ~/.config/bspwm/hide-internal ~/.config/bspwm/bspwmrc
+    killall -q polybar
+
+    ;;
+
+1)
+    cp ~/.screenlayout/both.sh ~/.screenlayout/layout.sh
+    cp ~/.config/bspwm/show-internal ~/.config/bspwm/bspwmrc
+    
+    ;;
+2)
+    cp ~/.screenlayout/monitor.sh ~/.screenlayout/layout.sh
+    cp ~/.config/bspwm/hide-monitor ~/.config/bspwm/bspwmrc
+    killall -q polybar
+
+    ;;
+3)
+    cp ~/.screenlayout/monitor.sh ~/.screenlayout/layout.sh
+    cp ~/.config/bspwm/show-monitor ~/.config/bspwm/bspwmrc
+
+    ;;
+4)
+    cp ~/.screenlayout/both.sh ~/.screenlayout/layout.sh
+    cp ~/.config/bspwm/hide-both ~/.config/bspwm/bspwmrc
+    killall -q polybar
+
+    ;;
+
+5)
+    cp ~/.screenlayout/both.sh ~/.screenlayout/layout.sh
+    cp ~/.config/bspwm/show-both ~/.config/bspwm/bspwmrc
+
+    ;;
+
+esac
+
+echo $mode > ~/.screenlayout/mode
+
+bspc wm -r

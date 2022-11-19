@@ -21,11 +21,8 @@ alias shut='shutdown now'
 alias sx='startx'
 alias vol='pamixer --get-volume'
 
-alias bsdir='cd ~/.config/bspwm/'
-alias sxdir='cd ~/.config/sxhkd/'
-
-alias hidebar='cp ~/.config/bspwm/hide ~/.config/bspwm/bspwmrc && killall -q polybar && bspc quit'
-alias showbar='cp ~/.config/bspwm/show ~/.config/bspwm/bspwmrc && bspc wm -r'
+alias bsconf='vim ~/.config/bspwm/bspwmrc'
+alias sxconf='vim ~/.config/sxhkd/sxhkdrc'
 
 alias cred='echo $(cat ~/Miscellaneous/key) | xclip -selection primary'
 
@@ -36,6 +33,9 @@ alias gs='git status'
 alias ga='git add --all'
 alias gc='git commit -m' $@
 alias gp='cred && git push'
+alias gr='git restore'
+alias grs='git restore --staged'
+a
 
 # cd + ls
 cd() {
@@ -53,4 +53,8 @@ alias pingdns='ping -c 4 1.1.1.1'
 alias pingext='ping -c 4 archlinux.org'
 
 alias hs='history | grep $@'
-alias brave='LIBGL_ALWAYS_SOFTWARE=1 brave'
+
+alias adb='/home/vishnu/Android/Sdk/platform-tools/adb'
+
+alias battery='cat /sys/class/power_supply/BAT0/capacity'
+
