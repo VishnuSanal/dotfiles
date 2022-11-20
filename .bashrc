@@ -35,7 +35,7 @@ alias gc='git commit -m' $@
 alias gp='cred && git push'
 alias gr='git restore'
 alias grs='git restore --staged'
-a
+
 
 # cd + ls
 cd() {
