@@ -7,6 +7,12 @@ FILE="/sys/class/backlight/intel_backlight/brightness"
 
 CURRENT=$(cat "$FILE")
 
+if [ $# == 1 ] && [ $1 == '-init' ]; then
+    sudo chmod a+rw $FILE
+    echo 'Done'
+    exit
+fi
+
 if [ ! "$1" ] || [ ! "$2" ]; then
     echo "Brightness: " $CURRENT
     exit
