@@ -11,6 +11,8 @@ feh --bg-fill ~/Pictures/wallpaper9.png
 # MPD daemon start (if no other user instance exists)
 [ ! -s ~/.config/mpd/pid ] && mpd && mpc pause &
 
+dunst &
+
 bspc monitor HDMI-1 -d I II III IV V
 bspc monitor eDP-1 -d VI VII VIII IX X
 
