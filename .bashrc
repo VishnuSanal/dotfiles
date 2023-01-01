@@ -58,3 +58,4 @@ alias adb='/home/vishnu/Android/Sdk/platform-tools/adb'
 
 alias battery='cat /sys/class/power_supply/BAT0/capacity'
 
+. "$HOME/.cargo/env"
