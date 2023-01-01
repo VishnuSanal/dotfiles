@@ -38,6 +38,9 @@ Print
 super + shift + p
 	pavucontrol
 
+super + shift + d
+	dosbox
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
