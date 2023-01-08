@@ -58,6 +58,11 @@ case $mode in
     killall -q polybar
 
     ;;
+*)
+    echo 'Invalid ID'
+    exit 1
+
+    ;;
 
 esac
 
