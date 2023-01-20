@@ -40,6 +40,18 @@ super + shift + p
 
 super + shift + d
 	dosbox
+	
+super + alt + b
+	notify-send "Battery: $(cat /sys/class/power_supply/BAT0/capacity)%"
+
+super + alt + v
+	notify-send "Volume: $(pamixer --get-volume)%"
+
+super + alt + d
+	notify-send "$(date +%H:%M:%S)"
+	
+super + alt + m
+	notify-send "$(mpc | head -n 2)"
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -172,4 +184,3 @@ XF86MonBrightnessUp
 	backlight -inc 10
 XF86MonBrightnessDown
 	backlight -dec 10
-	
