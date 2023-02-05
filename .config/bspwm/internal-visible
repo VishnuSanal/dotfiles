@@ -4,7 +4,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 ~/.screenlayout/layout.sh
 
-$HOME/.config/polybar/internal.sh
+$HOME/.config/polybar/launch/internal.sh
 picom &
 feh --bg-fill ~/Pictures/wallpaper9.png
 
