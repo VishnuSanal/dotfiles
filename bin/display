@@ -1,13 +1,13 @@
 #!/bin/bash
 
 if [ $# == 0 ]; then
-    echo '0 -> hide internal'
-    echo '1 -> show internal'
-    echo '2 -> hide monitor'
-    echo '3 -> show monitor'
-    echo '4 -> hide both'
-    echo '5 -> show both'
-    echo '6 -> show only internal'
+    echo '0 -> internal monitor only without polybar'
+    echo '1 -> internal monitor only with polybar'
+    echo '2 -> external monitor only without polybar'
+    echo '3 -> external monitor only with polybar'
+    echo '4 -> both monitors without polybar'
+    echo '5 -> both monitors with polybar'
+    echo '6 -> both monitors with polybar only on internal monitor'
 
     read -p 'Mode: ' mode
 else
@@ -18,43 +18,43 @@ case $mode in
 
 0)
     cp ~/.screenlayout/both.sh ~/.screenlayout/layout.sh
-    cp ~/.config/bspwm/hide-internal ~/.config/bspwm/bspwmrc
+    cp ~/.config/bspwm/internal-hidden ~/.config/bspwm/bspwmrc
     killall -q polybar
 
     ;;
 
 1)
     cp ~/.screenlayout/both.sh ~/.screenlayout/layout.sh
-    cp ~/.config/bspwm/show-internal ~/.config/bspwm/bspwmrc
+    cp ~/.config/bspwm/internal-visible ~/.config/bspwm/bspwmrc
     
     ;;
 2)
     cp ~/.screenlayout/monitor.sh ~/.screenlayout/layout.sh
-    cp ~/.config/bspwm/hide-monitor ~/.config/bspwm/bspwmrc
+    cp ~/.config/bspwm/external-hidden ~/.config/bspwm/bspwmrc
     killall -q polybar
 
     ;;
 3)
     cp ~/.screenlayout/monitor.sh ~/.screenlayout/layout.sh
-    cp ~/.config/bspwm/show-monitor ~/.config/bspwm/bspwmrc
+    cp ~/.config/bspwm/external-visible ~/.config/bspwm/bspwmrc
 
     ;;
 4)
     cp ~/.screenlayout/both.sh ~/.screenlayout/layout.sh
-    cp ~/.config/bspwm/hide-both ~/.config/bspwm/bspwmrc
+    cp ~/.config/bspwm/both-hidden ~/.config/bspwm/bspwmrc
     killall -q polybar
 
     ;;
 
 5)
     cp ~/.screenlayout/both.sh ~/.screenlayout/layout.sh
-    cp ~/.config/bspwm/show-both ~/.config/bspwm/bspwmrc
+    cp ~/.config/bspwm/both-visible ~/.config/bspwm/bspwmrc
 
     ;;
     
 6)
     cp ~/.screenlayout/both.sh ~/.screenlayout/layout.sh
-    cp ~/.config/bspwm/show-only-internal ~/.config/bspwm/bspwmrc
+    cp ~/.config/bspwm/both-internal-visible ~/.config/bspwm/bspwmrc
     killall -q polybar
 
     ;;
