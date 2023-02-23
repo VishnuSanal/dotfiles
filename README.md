@@ -19,3 +19,7 @@
 * [`pcmanfm`](https://github.com/lxde/pcmanfm)
 * [`rofi`](https://github.com/davatorium/rofi)
 * [`tty-clock`](https://github.com/xorg62/tty*clock)
+
+## Credits
+
+**@tsjazil** for [dotfiles](https://github.com/tsjazil/dotfiles)
