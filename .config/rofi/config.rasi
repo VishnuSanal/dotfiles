@@ -10,4 +10,4 @@ configuration{
     }
 }
 
-@theme "themes/frappe"
+@theme "themes/mocha"
