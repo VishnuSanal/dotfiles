@@ -18,7 +18,7 @@
 * [`zathura`](https://github.com/pwmt/zathura)
 * [`pcmanfm`](https://github.com/lxde/pcmanfm)
 * [`rofi`](https://github.com/davatorium/rofi)
-* [`tty-clock`](https://github.com/xorg62/tty*clock)
+* [`tty-clock`](https://github.com/xorg62/tty-clock)
 
 ## Credits
 
