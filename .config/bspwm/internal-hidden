@@ -6,13 +6,14 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 # $HOME/.config/polybar/launch/internal.sh
 picom &
-feh --bg-scale ~/Pictures/wallpaper3.png
+feh --bg-scale ~/Pictures/wallpaper16.jpg
 
 # MPD daemon start (if no other user instance exists)
 [ ! -s ~/.config/mpd/pid ] && mpd && mpc pause &
 
 dunst &
-conky &
+conky -c ~/.config/conky/conky_date_time.conf &
+conky -c ~/.config/conky/conky_mpd.conf &
 
 bspc monitor eDP-1 -d I II III IV V
 # bspc monitor HDMI-1 VI VII VIII IX X
