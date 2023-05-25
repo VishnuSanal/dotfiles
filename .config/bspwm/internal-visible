@@ -6,12 +6,13 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 $HOME/.config/polybar/launch/internal.sh
 picom &
-feh --bg-fill ~/Pictures/wallpaper9.png
+feh --bg-scale ~/Pictures/wallpaper3.png
 
 # MPD daemon start (if no other user instance exists)
 [ ! -s ~/.config/mpd/pid ] && mpd && mpc pause &
 
 dunst &
+conky &
 
 bspc monitor eDP-1 -d I II III IV V
 # bspc monitor HDMI-1 VI VII VIII IX X
@@ -19,7 +20,7 @@ bspc monitor eDP-1 -d I II III IV V
 bspc config border_width        0
 bspc config window_gap          24
 
-bspc config split_ratio          0.52
+bspc config split_ratio          0.50
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 

@@ -1,3 +1,15 @@
+[general]
+
+autosens = 1
+
+bars = 512
+bar_width = 1
+bar_spacing = 1
+
+[output]
+
+alacritty_sync = 1
+
 [color]
 
 gradient = 1

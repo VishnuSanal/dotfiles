@@ -115,6 +115,10 @@ super + bracket{left,right}
 
 # cycle through workspaces
 super + grave
+	bspc desktop -f next.occupied.local
+
+# cycle through workspaces
+ctrl + super + grave
 	bspc desktop -f next.occupied
 
 # focus the last desktop
@@ -169,9 +173,9 @@ super + {Left,Down,Up,Right}
 
 # volume
 XF86AudioLowerVolume
-	pamixer -d 5
+	pamixer -d 5 --allow-boost
 XF86AudioRaiseVolume
-	pamixer -i 5
+	pamixer -i 5 --allow-boost
 XF86AudioMute
 	pamixer -t
 XF86AudioPlay

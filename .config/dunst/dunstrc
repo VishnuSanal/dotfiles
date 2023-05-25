@@ -1,0 +1,14 @@
+[global]
+
+background = "#1E1E2E"
+foreground = "#FFFFFF"
+
+scale = 1.4
+
+corner_radius = 10
+gap_size = 8
+padding = 16
+
+frame_width = 0
+
+font = "JetbrainsMono Nerd Font 10"

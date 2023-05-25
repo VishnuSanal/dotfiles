@@ -2,9 +2,49 @@ VteTerminal,
 TerminalScreen,
 vte-terminal {
     padding: 26px 26px 26px 26px;
-<<<<<<< HEAD
-    -VteTerminal-inner-border: 26px 26px 26px 26px;
-=======
     -VteTerminal-inner-border: 10px 10px 10px 10px;
->>>>>>> 6b9ed60 (update dotfiles)
 }
+
+.csd .titlebar {
+ border-radius: 8;
+}
+
+.window-frame {
+ border-radius: 8;
+}
+
+decoration, window, window.background, window.titlebar, * {
+border-radius: 8px;
+}
+
+.titlebar,
+.titlebar .background, * {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+
+.window-frame {
+    border-radius: 8 8 8 8;
+}
+
+.background.csd {
+    border-radius: 8 8 8px 8px;
+}
+.background.maximized, .background.solid-csd {
+    border-radius: 8;
+}
+
+.window-frame, .window-frame:backdrop {
+ box-shadow: 8 8 8 black;
+ border-style: none;
+ margin: 0;
+ border-radius: 8;
+}
+
+.titlebar {
+ border-radius: 8;
+}
+
