@@ -6,7 +6,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 $HOME/.config/polybar/launch/monitor.sh
 picom &
-feh --bg-scale ~/Pictures/wallpaper16.jpg
+feh --bg-scale ~/Pictures/wallpaper11.jpg
 
 # MPD daemon start (if no other user instance exists)
 [ ! -s ~/.config/mpd/pid ] && mpd && mpc pause &
