@@ -4,7 +4,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 ~/.screenlayout/layout.sh
 
-$HOME/.config/polybar/launch/monitor.sh
+$HOME/.config/polybar/launch/internal.sh
 picom &
 feh --bg-scale ~/Pictures/wallpaper11.jpg
 
@@ -12,21 +12,26 @@ feh --bg-scale ~/Pictures/wallpaper11.jpg
 [ ! -s ~/.config/mpd/pid ] && mpd && mpc pause &
 
 dunst &
+killall conky -q
 conky -c ~/.config/conky/conky_date_time.conf &
 conky -c ~/.config/conky/conky_mpd.conf &
 
 bspc monitor HDMI-1 -d I II III IV V
-# bspc monitor eDP-1 VI VII VIII IX X
+bspc monitor eDP-1 -d VI VII VIII IX X
 
 bspc config border_width        0
-bspc config window_gap          24
+
+bspc config -m eDP-1  window_gap         24
+bspc config -m HDMI-1 window_gap         4
 
 bspc config split_ratio          0.50
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 bspc config bottom_padding 0
-bspc config top_padding 60
+
+bspc config -m eDP-1 top_padding  60
+bspc config -m HDMI-1 top_padding  0
 
 xinput set-prop "SYNA32C5:00 06CB:CD50 Touchpad" "libinput Tapping Enabled" 1
 xinput set-prop "SYNA32C5:00 06CB:CD50 Touchpad" "libinput Natural Scrolling Enabled" 1

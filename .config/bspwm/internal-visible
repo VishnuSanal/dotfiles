@@ -12,6 +12,7 @@ feh --bg-scale ~/Pictures/wallpaper11.jpg
 [ ! -s ~/.config/mpd/pid ] && mpd && mpc pause &
 
 dunst &
+killall conky -q
 conky -c ~/.config/conky/conky_date_time.conf &
 conky -c ~/.config/conky/conky_mpd.conf &
 

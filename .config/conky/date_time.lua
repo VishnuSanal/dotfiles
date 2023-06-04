@@ -10,5 +10,3 @@ end
 function conky_gettime()
     return tostring(os.date("- %H:%M -"))
 end
-
-print(conky_getweekday())
