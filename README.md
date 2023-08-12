@@ -1,6 +1,6 @@
 # dotfiles
 
-![SS](https://github.com/VishnuSanal/dotfiles/blob/main/SS.png?raw=true)
+![SS](https://github.com/VishnuSanal/dotfiles/assets/50027064/b67a6f50-6a1d-4331-be73-c803571f48e1?raw=true)
 
 * OS: Arch Linux
 * WM: [`BSPWM`](https://github.com/baskerville/bspwm)
