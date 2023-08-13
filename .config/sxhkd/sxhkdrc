@@ -31,6 +31,10 @@ super + v
 super + a
 	discord
 
+# discord
+super + g
+	galculator
+
 # flameshot
 Print
 	flameshot gui

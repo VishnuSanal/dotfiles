@@ -6,6 +6,11 @@ bars = 512
 bar_width = 1
 bar_spacing = 1
 
+[input]
+
+method = pulse
+source = auto
+
 [output]
 
 alacritty_sync = 1
