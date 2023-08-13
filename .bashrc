@@ -36,7 +36,7 @@ alias gc='git commit -m' $@
 alias gp='cred && git push'
 alias gr='git restore'
 alias grs='git restore --staged'
-
+alias gpr='git pull --rebase'
 
 # cd + ls
 cd() {
