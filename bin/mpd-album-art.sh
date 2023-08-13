@@ -12,9 +12,9 @@ while true; do
 
         ffmpeg -i "$FILE" "$THUMB" -y  &> /dev/null
 
-        mpc idle player
-
     fi
+
+    mpc idle player
 
 done
 
