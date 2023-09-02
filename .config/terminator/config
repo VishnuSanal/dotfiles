@@ -1,25 +1,29 @@
 [global_config]
   dbus = False
   geometry_hinting = True
+  borderless = True
+  always_on_top = True
+  inactive_color_offset = 0.8024691358024691
   suppress_multiple_term_dialog = True
-  title_use_system_font = False
-  title_font = JetBrainsMonoNL Nerd Font Mono Medium 14
 [keybindings]
 [profiles]
   [[default]]
     icon_bell = False
     background_color = "#1e1e2e"
-    background_darkness = 0.8
+    background_darkness = 0.0
     background_type = transparent
+    background_image = None
     cursor_shape = ibeam
-    cursor_color = "#cdd6f4"
-    font = JetBrainsMonoNL Nerd Font Mono Medium 18
+    font = JetBrainsMonoNL Nerd Font Mono Medium 10
     foreground_color = "#cdd6f4"
     show_titlebar = False
     scrollbar_position = hidden
     palette = "#45475a:#f38ba8:#a6e3a1:#f9e2af:#89b4fa:#f5c2e7:#94e2d5:#bac2de:#585b70:#f38ba8:#a6e3a1:#f9e2af:#89b4fa:#f5c2e7:#94e2d5:#a6adc8"
+    use_custom_command = True
+    custom_command = cava
     use_system_font = False
-    background_image = None
+    title_use_system_font = False
+    title_font = JetBrains Mono 10
 [layouts]
   [[default]]
     [[[window0]]]

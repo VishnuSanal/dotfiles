@@ -44,6 +44,12 @@ super + shift + p
 
 super + shift + d
 	dosbox
+
+super + shift + w
+	/opt/brave-bin/brave --profile-directory=Default --app-id=hnpfjngllnobngcgfapefoaidbinmjnm
+
+super + shift + t
+	terminator 
 	
 super + alt + b
 	notify-send "Battery: $(cat /sys/class/power_supply/BAT0/capacity)%"
