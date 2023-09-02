@@ -9,63 +9,24 @@ if [ $# == 0 ]; then
     echo '5 -> both monitors with polybar'
     echo '6 -> both monitors with polybar only on internal monitor'
 
-    read -p 'Mode: ' mode
+    read -p 'Mode: ' MODE
 else
-    mode=$1
+    MODE=$1
 fi
 
-case $mode in
+MODE=$(echo $MODE | head -c 1)
 
-0)
-    cp ~/.screenlayout/both.sh ~/.screenlayout/layout.sh
-    cp ~/.config/bspwm/internal-hidden ~/.config/bspwm/bspwmrc
-    killall -q polybar
+re='^[0-9]'
 
-    ;;
+if [[ $MODE =~ $re ]] && [[ $MODE -le 6 ]]; then
 
-1)
-    cp ~/.screenlayout/both.sh ~/.screenlayout/layout.sh
-    cp ~/.config/bspwm/internal-visible ~/.config/bspwm/bspwmrc
-    
-    ;;
-2)
-    cp ~/.screenlayout/monitor.sh ~/.screenlayout/layout.sh
-    cp ~/.config/bspwm/external-hidden ~/.config/bspwm/bspwmrc
-    killall -q polybar
+    echo $MODE > ~/.screenlayout/mode
 
-    ;;
-3)
-    cp ~/.screenlayout/monitor.sh ~/.screenlayout/layout.sh
-    cp ~/.config/bspwm/external-visible ~/.config/bspwm/bspwmrc
+    bspc wm -r
 
-    ;;
-4)
-    cp ~/.screenlayout/both.sh ~/.screenlayout/layout.sh
-    cp ~/.config/bspwm/both-hidden ~/.config/bspwm/bspwmrc
-    killall -q polybar
+    exit 0
 
-    ;;
+fi
 
-5)
-    cp ~/.screenlayout/both.sh ~/.screenlayout/layout.sh
-    cp ~/.config/bspwm/both-visible ~/.config/bspwm/bspwmrc
-
-    ;;
-    
-6)
-    cp ~/.screenlayout/both.sh ~/.screenlayout/layout.sh
-    cp ~/.config/bspwm/both-internal-visible ~/.config/bspwm/bspwmrc
-    killall -q polybar
-
-    ;;
-*)
-    echo 'Invalid ID'
-    exit 1
-
-    ;;
-
-esac
-
-echo $mode > ~/.screenlayout/mode
-
-bspc wm -r
+echo 'Invalid ID'
+exit 1

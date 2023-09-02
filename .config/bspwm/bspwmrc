@@ -1,37 +1,66 @@
 #! /bin/sh
 
-pgrep -x sxhkd > /dev/null || sxhkd &
+MODE=$(cat ~/.screenlayout/mode)
+
+pgrep -x sxhkd >/dev/null || sxhkd &
 
 ~/.screenlayout/layout.sh
 
-$HOME/.config/polybar/launch/internal.sh
-picom &
-feh --bg-scale ~/Pictures/wallpaper11.jpg
+killall -q polybar
+
+if [ $MODE == 1 ] || [ $MODE == 6 ]; then
+    $HOME/.config/polybar/launch/internal.sh
+elif [ $MODE == 3 ]; then
+    $HOME/.config/polybar/launch/monitor.sh
+elif [ $MODE == 5 ]; then
+    $HOME/.config/polybar/launch/both.sh
+fi
 
 # MPD daemon start (if no other user instance exists)
 [ ! -s ~/.config/mpd/pid ] && mpd && mpc pause &
 
+picom &
 dunst &
+
+feh --bg-scale ~/Pictures/wallpaper.jpg
+
 killall conky -q
 conky -c ~/.config/conky/conky_date_time.conf &
 conky -c ~/.config/conky/conky_mpd.conf &
 
-bspc monitor HDMI-1 -d I II III IV V
-bspc monitor eDP-1 -d VI VII VIII IX X
+if [ $MODE == 0 ] || [ $MODE == 1 ]; then
+    bspc monitor eDP-1 -d I II III IV V
+elif [ $MODE == 2 ] || [ $MODE == 3 ]; then
+    bspc monitor HDMI-1 -d I II III IV V
+elif [ $MODE == 4 ] || [ $MODE == 5 ] || [ $MODE == 6 ]; then
+    bspc monitor HDMI-1 -d I II III IV V
+    bspc monitor eDP-1 -d VI VII VIII IX X
+fi
 
-bspc config border_width        0
+bspc config border_width 0
 
-bspc config -m eDP-1  window_gap         24
-bspc config -m HDMI-1 window_gap         4
-
-bspc config split_ratio          0.50
-bspc config borderless_monocle   true
-bspc config gapless_monocle      true
+bspc config split_ratio 0.50
+bspc config borderless_monocle true
+bspc config gapless_monocle true
 
 bspc config bottom_padding 0
 
-bspc config -m eDP-1 top_padding  60
-bspc config -m HDMI-1 top_padding  0
+if [ $MODE == 0 ] || [ $MODE == 2 ] || [ $MODE == 4 ]; then
+    bspc config top_padding 0
+    bspc config window_gap 4
+elif [ $MODE == 1 ] || [ $MODE == 3 ] || [ $MODE == 5 ]; then
+    bspc config top_padding 60
+    bspc config window_gap 24
+elif [ $MODE == 6 ]; then
+    bspc config -m eDP-1 top_padding 60
+    bspc config -m HDMI-1 top_padding 0
+
+    bspc config -m eDP-1 window_gap 24
+    bspc config -m HDMI-1 window_gap 4
+fi
+
+bspc rule -a Galculator follow=on state=floating
+bspc rule -a Terminator state=fullscreen
 
 xinput set-prop "SYNA32C5:00 06CB:CD50 Touchpad" "libinput Tapping Enabled" 1
 xinput set-prop "SYNA32C5:00 06CB:CD50 Touchpad" "libinput Natural Scrolling Enabled" 1
