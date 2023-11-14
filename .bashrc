@@ -8,12 +8,16 @@ export PATH="$HOME/.local/bin:$PATH"
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# alias ls='ls -a --color=auto'
+# \033[1;36m󰊠 \033[1;32m󰊠
+
+# PS1='\033[1;34m󰊠 \033[1;31m󰊠\033[0m \W \033[1;33m󰮯\033[0m'
+# PS1='\W \033[1;31m󰊠 \033[1;33m󰮯 \033[0m'
+# PS1='\W \033[1;31m󰮯 \033[0m'
 
 PS1='\W $ '
 
+# echo -e "\033[1;33m󰮯  \033[1;32m󰊠  \033[1;34m󰊠  \033[1;31m󰊠  \033[1;36m󰊠\n"
 echo -e "You're Awesome :)\n"
-# neofetch
 
 alias c='clear'
 alias clear='clear && echo -e "You'\''re Awesome :)\n"'
@@ -44,7 +48,7 @@ cd() {
    ls
 }
 
-alias update='sudo pacman -Syu && yay -a -Syu'
+alias update='backlight -i && sudo pacman -Syu && yay -a -Syu'
 
 alias wifil='nmcli device wifi list'
 alias wific='nmcli device wifi connect $@'
