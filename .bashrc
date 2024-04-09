@@ -15,6 +15,7 @@ export PATH="$HOME/.local/bin:$PATH"
 # PS1='\W \033[1;31m󰮯 \033[0m'
 
 PS1='\W $ '
+# PS1='$ '
 
 # echo -e "\033[1;33m󰮯  \033[1;32m󰊠  \033[1;34m󰊠  \033[1;31m󰊠  \033[1;36m󰊠\n"
 echo -e "You're Awesome :)\n"
@@ -28,6 +29,7 @@ alias vol='pamixer --get-volume'
 
 alias bsconf='vim ~/.config/bspwm/bspwmrc'
 alias sxconf='vim ~/.config/sxhkd/sxhkdrc'
+alias bconf='vim ~/.bashrc'
 
 alias cred='echo $(cat ~/Miscellaneous/key) | xclip -selection primary'
 
@@ -64,3 +66,6 @@ alias adb='/home/vishnu/Android/Sdk/platform-tools/adb'
 alias battery='cat /sys/class/power_supply/BAT0/capacity'
 
 . "$HOME/.cargo/env"
+
+export KOTLIN_HOME=~/.local/share/JetBrains/IdeaIC2023.2/Kotlin/kotlinc
+export PATH=$PATH:$KOTLIN_HOME/bin

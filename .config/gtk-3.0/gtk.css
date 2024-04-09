@@ -6,11 +6,11 @@ vte-terminal {
 }
 
 .csd .titlebar {
- border-radius: 8;
+ border-radius: 8px;
 }
 
 .window-frame {
- border-radius: 8;
+ border-radius: 8px;
 }
 
 decoration, window, window.background, window.titlebar, * {
@@ -31,20 +31,20 @@ border-radius: 8px;
 }
 
 .background.csd {
-    border-radius: 8 8 8px 8px;
+    border-radius: 8px 8px 8px 8px;
 }
 .background.maximized, .background.solid-csd {
-    border-radius: 8;
+    border-radius: 8px;
 }
 
 .window-frame, .window-frame:backdrop {
- box-shadow: 8 8 8 black;
+ box-shadow: 8px 8px 8px black;
  border-style: none;
- margin: 0;
- border-radius: 8;
+ margin: 0px;
+ border-radius: 8px;
 }
 
 .titlebar {
- border-radius: 8;
+ border-radius: 8px;
 }
 

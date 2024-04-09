@@ -21,6 +21,7 @@ fi
 
 picom &
 dunst &
+xbindkeys
 
 feh --bg-scale ~/Pictures/wallpaper.jpg
 
@@ -61,6 +62,7 @@ fi
 
 bspc rule -a Galculator follow=on state=floating
 bspc rule -a Terminator state=fullscreen
+bspc rule -a Nsxiv state=floating
 
 xinput set-prop "SYNA32C5:00 06CB:CD50 Touchpad" "libinput Tapping Enabled" 1
 xinput set-prop "SYNA32C5:00 06CB:CD50 Touchpad" "libinput Natural Scrolling Enabled" 1
