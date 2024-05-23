@@ -25,6 +25,22 @@ if [ $# == 1 ] && ([ $1 == '-init' ] || [ $1 == '-i' ]); then
     exit
 fi
 
+# auto initialize:
+# create a file /etc/systemd/system/display-backlight-file-chown-service.service with the following content
+# and start the service with `sudo systemctl enable display-backlight-file-chown-service`
+
+# [Unit]
+# Description=Sets chown to the internal display backlight file
+# Before=nodered.service
+
+# [Service]
+# Type=oneshot
+# User=root
+# ExecStart=/bin/bash -c "/bin/chmod a+rw /sys/class/backlight/intel_backlight/brightness"
+
+# [Install]
+# WantedBy=multi-user.target
+
 # internal display
 if [ $# == 2 ] && ([ $1 == '-inc' ] || [ $1 == '-i' ] || [ $1 == '-dec' ] || [ $1 == '-d' ]); then
 
@@ -82,4 +98,3 @@ fi
 
 # not enough params, print & exit
 print_exit
-
