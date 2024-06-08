@@ -1,0 +1,17 @@
+#!/bin/bash
+
+COUNT=$(checkupdates | grep linux | wc -l)
+
+if [[ $COUNT -gt 1 ]] then
+    echo -e "Multiple kernel updates detected...\nUpdating only linux kernel\nPlease run this command again after a reboot to update other kernels."
+    sudo pacman -Syu --ignore linux-lts --ignore linux-zen --ignore linux-hardened && yay -aSyu
+    echo "Update completed, please reboot..."
+    exit 0
+elif [[ $COUNT -eq 1 ]] then
+    echo -e "Single kernel to be updated..."
+else
+    echo -e "No kernel updates..."
+fi
+
+echo "Proceeding with update..."
+sudo pacman -Syu && yay -aSyu
