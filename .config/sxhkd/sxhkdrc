@@ -17,6 +17,7 @@ super + x
 
 # nautilus
 super + e
+#	nautilus
 	pcmanfm
 
 # telegram
@@ -42,8 +43,8 @@ Print
 super + shift + p
 	pavucontrol
 
-super + shift + d
-	dosbox
+super + shift + v
+	clipcat-menu
 
 super + shift + w
 	/opt/brave-bin/brave --profile-directory=Default --app-id=hnpfjngllnobngcgfapefoaidbinmjnm
@@ -183,9 +184,9 @@ super + {Left,Down,Up,Right}
 
 # volume
 XF86AudioLowerVolume
-	pamixer -d 5 --allow-boost
+	pamixer -d 20 --allow-boost
 XF86AudioRaiseVolume
-	pamixer -i 5 --allow-boost
+	pamixer -i 20 --allow-boost
 XF86AudioMute
 	pamixer -t
 XF86AudioPlay
@@ -195,6 +196,12 @@ XF86AudioPrev
 XF86AudioNext
 	mpc next
 XF86MonBrightnessUp
-	backlight -inc 10
+	backlight -inc 20
 XF86MonBrightnessDown
-	backlight -dec 10
+	backlight -dec 20
+
+XF86HomePage
+	backlight -dec 20
+XF86Mail
+	backlight -inc 20
+

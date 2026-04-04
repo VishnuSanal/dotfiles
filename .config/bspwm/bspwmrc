@@ -2,6 +2,9 @@
 
 MODE=$(cat ~/.screenlayout/mode)
 
+export XDG_CURRENT_DESKTOP=GNOME
+export GTK_USE_PORTAL=1
+
 pgrep -x sxhkd >/dev/null || sxhkd &
 
 ~/.screenlayout/layout.sh
@@ -17,17 +20,21 @@ elif [ $MODE == 5 ]; then
 fi
 
 # MPD daemon start (if no other user instance exists)
-[ ! -s ~/.config/mpd/pid ] && mpd && mpc pause &
+# [ ! -s ~/.config/mpd/pid ] && mpd && mpc pause &
 
-picom &
+picom --backend xrender &
 dunst &
+flameshot &
 xbindkeys
 
-feh --bg-scale ~/Pictures/wallpaper.jpg
+./eye_health_reminder
+
+feh --bg-scale ~/Wallpapers/wallpaper.png
 
 killall conky -q
-conky -c ~/.config/conky/conky_date_time.conf &
-conky -c ~/.config/conky/conky_mpd.conf &
+conky -c ~/.config/conky/conky_one.conf &
+# conky -c ~/.config/conky/conky_two.conf &
+
 
 if [ $MODE == 0 ] || [ $MODE == 1 ]; then
     bspc monitor eDP-1 -d I II III IV V
@@ -48,7 +55,7 @@ bspc config bottom_padding 0
 
 if [ $MODE == 0 ] || [ $MODE == 2 ] || [ $MODE == 4 ]; then
     bspc config top_padding 0
-    bspc config window_gap 4
+    bspc config window_gap 12
 elif [ $MODE == 1 ] || [ $MODE == 3 ] || [ $MODE == 5 ]; then
     bspc config top_padding 60
     bspc config window_gap 24
@@ -57,12 +64,14 @@ elif [ $MODE == 6 ]; then
     bspc config -m HDMI-1 top_padding 0
 
     bspc config -m eDP-1 window_gap 24
-    bspc config -m HDMI-1 window_gap 4
+    bspc config -m HDMI-1 window_gap 12
 fi
 
 bspc rule -a Galculator follow=on state=floating
 bspc rule -a Terminator state=fullscreen
 bspc rule -a Nsxiv state=floating
+bspc rule -a zoom desktop="^6"
 
 xinput set-prop "SYNA32C5:00 06CB:CD50 Touchpad" "libinput Tapping Enabled" 1
 xinput set-prop "SYNA32C5:00 06CB:CD50 Touchpad" "libinput Natural Scrolling Enabled" 1
+xinput set-prop "HID 1bcf:08a0 Mouse" "libinput Accel Speed" +1

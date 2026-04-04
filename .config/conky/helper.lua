@@ -1,12 +1,12 @@
 ---@diagnostic disable: lowercase-global
 function conky_getweekday()
-    return tostring(os.date("%A")):gsub(".", "%1 "):sub(1, -2)
+    return tostring(os.date("%A")):gsub(".", "%1 "):sub(1, -2):upper()
 end
 
 function conky_getdate()
-    return tostring(os.date("%d %B, %Y"))
+    return tostring(os.date("%d %B, %Y")):upper()
 end
 
 function conky_gettime()
-    return tostring(os.date("- %H:%M -"))
+    return tostring(os.date("- %H:%M -")):upper()
 end

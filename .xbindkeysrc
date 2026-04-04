@@ -1,0 +1,4 @@
+"bspc node -f next.local.!hidden.window"
+	b:8
+"bspc desktop -f next.local.occupied"
+	b:9
