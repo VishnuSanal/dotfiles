@@ -5,10 +5,14 @@
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/bin/flutter/bin:$PATH"
+export PATH="/opt/flutter/bin/:$PATH"
 
 export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
+export CHROME_EXECUTABLE=brave
+
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
 
 export GEM_HOME=$HOME/.local/share/gem/ruby/3.4.0/
 export PATH="$GEM_HOME/bin:$PATH"
@@ -86,8 +90,6 @@ hs() {
 	# history -s $(history | cut -c 8- | grep "$@" | fzf)
 	history -s $(history | cut -c 8- | grep "$@" | fzf)
 }
-
-
 
 MOBILE_IP="192.168.1.3"
 

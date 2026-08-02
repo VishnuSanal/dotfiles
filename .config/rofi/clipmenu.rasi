@@ -1,0 +1,49 @@
+configuration {
+    show-icons: false;
+}
+
+* {
+    bg-col:       #303446;
+    border-col:   #303446;
+    selected-col: #303446;
+    fg-col:       #c6d0f5;
+    fg-col2:      #e78284;
+
+    width: 600;
+    font: "JetBrainsMono Nerd Font 14";
+}
+
+window {
+    border: 3px;
+    border-color: @border-col;
+    background-color: @bg-col;
+}
+
+mainbox {
+    children: [ listview ];
+    background-color: @bg-col;
+}
+
+listview {
+    padding: 6px 0px 0px;
+    margin: 10px 20px;
+    columns: 1;
+    lines: 8;
+    background-color: @bg-col;
+}
+
+element {
+    padding: 5px;
+    background-color: @bg-col;
+    text-color: @fg-col;
+}
+
+element selected {
+    background-color: @selected-col;
+    text-color: @fg-col2;
+}
+
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+}

@@ -1,25 +1,20 @@
 #!/bin/sh
 
-while true; do
+THUMB="/tmp/mpdAlbumArt.jpg"
 
-    if pgrep -x "mpd" > /dev/null 
-    then
-        mpc idle player
-    else
-        echo "Waiting for MPD to start..."
-        sleep 5        
-        continue
-    fi
+while true; do
 
     if [ $(mpc status %state%) == "playing" ]; then
 
         FILE="/home/vishnu/Music/$(mpc current -f %file%)"
 
-        echo "Current: $FILE"
+        echo $FILE
 
-        ffmpeg -i "$FILE" "/tmp/mpdAlbumArt.jpg" -y  &> /dev/null
+        ffmpeg -i "$FILE" "$THUMB" -y  &> /dev/null
 
     fi
+
+    mpc idle player
 
 done
 

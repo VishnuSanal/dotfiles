@@ -3,6 +3,7 @@
 # function definitions
 
 FILE="/sys/class/backlight/intel_backlight/brightness"
+OLD_FILE="/tmp/toggle_brightness_restore"
 
 print_exit() {
 
@@ -19,8 +20,31 @@ print_exit() {
 if [ $# == 1 ] && ([ $1 == '-init' ] || [ $1 == '-i' ]); then
 
     sudo chmod a+rw $FILE
+    
+    touch $OLD_FILE
+    chmod a+rw $OLD_FILE
+    
     sudo modprobe i2c-dev
+    
     echo 'Done'
+
+    exit
+fi
+
+# toggle
+if [ $# == 1 ] && ([ $1 == '-toggle' ] || [ $1 == '-t' ]); then
+
+    CURRENT=$(cat "$FILE")
+    OLD=$(cat "$OLD_FILE")
+
+    if [ $CURRENT -eq 0 ]; then
+        NEW=$OLD
+    else
+        echo $CURRENT >"$OLD_FILE"
+        NEW=0
+    fi
+
+    echo $NEW >"$FILE"
 
     exit
 fi
